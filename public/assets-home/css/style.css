@@ -1,0 +1,583 @@
+/*
+@File: Landset Template Style
+
+* This file contains the styling for the actual template, this
+is the file you need to edit to change the look of the
+template.
+
+This files table contents are outlined below>>>>>
+
+*******************************************
+*******************************************
+***** App landing 
+** - Custom CSS
+** - Theme defalut CSS
+** - Navbar  CSS
+** - Banner Section CSS
+** - Why Choose Section CSS
+** - Features Section CSS
+** - Screenshots Section CSS 
+** - How Use Section CSS
+** - Price Section CSS
+** - Testimonial Section CSS
+** - Newsletter CSS
+** - Footer Section CSS
+
+**** Sass Landing Page One
+** - Banner Section CSS
+** - Trusted Company CSS
+** - Services Section CSS
+** - Why Choose Section CSS
+** - Standard Code Section CSS
+** - Mobile Apps Section CSS
+** - Counter Section CSS
+
+**** Sass Landing Page Two
+** - Banner Section CSS
+** - Service Section CSS
+** - Features Section CSS
+** - Keep Update  Section CSS
+** - Price  Section CSS
+** - Counter  Section CSS
+** - Testimonial  Section CSS
+** - Newsletter  Section CSS
+
+**** Personal Portfolio Landing Page 
+** - Banner Section CSS
+** - About Section CSS
+** - Service Section CSS
+** - Software Section CSS
+** - Showcase Section CSS
+** - Company Section CSS
+** - Testimonial Section CSS
+** - Contact Section CSS
+
+**** Creative Agency Landing Page
+** - Banner Section CSS
+** - About Section CSS
+** - Service Section CSS
+** - Work Process Section CSS
+** - Case Study Section CSS
+** - Testimonial Section CSS
+** - Pricing Section CSS
+** - Team Section CSS
+** - Newsletter Section CSS
+
+** - Back To Top CSS
+** - Preloader CSS
+** - Animation CSS
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+/* Font Variables */
+/* Color Variables */
+body {
+  color: #717477;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Defalut CSS Start */
+img {
+  max-width: 100%;
+}
+
+a {
+  -webkit-transition: .5s;
+  transition: .5s;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+button {
+  outline: 0 !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: 0 0 0 0;
+          box-shadow: 0 0 0 0;
+}
+
+.d-table {
+  width: 100%;
+  height: 100%;
+}
+
+.d-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", sans-serif;
+  color: #0f2137;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.pt-100 {
+  padding-top: 100px;
+}
+
+.pb-70 {
+  padding-bottom: 70px;
+}
+
+.section-title {
+  max-width: 600px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.section-title span {
+  font-size: 16px;
+  color: #e54f4f;
+  font-weight: 700;
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.section-title h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #343d48;
+  margin-bottom: 25px;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/* Banner Section CSS Start */
+.banner-bg-one {
+  background-image: url(../img/app-landing/banner-bg.png);
+}
+
+.main-banner {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  height: 900px;
+}
+
+.main-banner .banner-text {
+  max-width: 650px;
+}
+
+.main-banner .banner-text h1 {
+  font-size: 60px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+
+.main-banner .banner-text .banner-btn a {
+  color: #03abeb;
+  background: #ffffff;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 80px;
+  margin-right: 30px;
+  -webkit-box-shadow: 0 6px 13px rgba(0, 0, 0, 0.25) !important;
+          box-shadow: 0 6px 13px rgba(0, 0, 0, 0.25) !important;
+}
+
+.main-banner .banner-text .banner-btn a:hover {
+  background: #03abeb;
+  color: #ffffff;
+}
+
+.main-banner .banner-text .banner-btn .banner-video {
+  background: transparent;
+  color: #ffffff;
+  padding: 0;
+  -webkit-box-shadow: 0 0 0 0 !important;
+          box-shadow: 0 0 0 0 !important;
+}
+
+.main-banner .banner-text .banner-btn .banner-video i {
+  font-size: 35px;
+  top: 7px;
+  position: relative;
+  left: -5px;
+}
+
+.main-banner .banner-text .banner-btn .banner-video:hover {
+  background: none;
+}
+
+/* Animation shape */
+.main-banner .banner-img::after {
+  position: absolute;
+  content: '';
+  background: #d3c0fa;
+  width: 150px;
+  height: 150px;
+  border-radius: 30px;
+  right: -50px;
+  bottom: -50px;
+  z-index: -1;
+  -webkit-animation: translateX 6s infinite linear;
+          animation: translateX 6s infinite linear;
+}
+
+.main-banner .banner-img img {
+  border-radius: 25px;
+  max-width: 250px;
+  -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+          box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+}
+
+.main-banner .banner-shape img {
+  position: absolute;
+}
+
+.main-banner .banner-shape :nth-child(1) {
+  top: 140px;
+  left: -100px;
+  width: 220px;
+  -webkit-animation: translateY 4s infinite linear;
+          animation: translateY 4s infinite linear;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.main-banner .banner-shape :nth-child(2) {
+  top: 0px;
+  left: -25px;
+  width: 100px;
+  -webkit-animation: translateY 4s infinite linear;
+          animation: translateY 4s infinite linear;
+}
+
+.main-banner .banner-shape :nth-child(3) {
+  right: 50px;
+  top: 100px;
+  -webkit-animation: translateX 6s infinite linear;
+          animation: translateX 6s infinite linear;
+}
+
+/* Banner Section CSS End */
+/* Banner CSS End */
+
+/*----- Sass Landing Page Two End -----*/
+/*----- Personal Portfolio Page Start -----*/
+/* Banner CSS Start */
+.banner-style-four {
+  background: #1f60d8;
+  height: 100vh;
+  padding-top: 0;
+}
+
+.banner-style-four .banner-text {
+  padding-top: 60px;
+}
+
+.banner-style-four .banner-text span {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.banner-style-four .banner-text h1 {
+  margin-bottom: 15px;
+  font-size: 50px;
+}
+
+.banner-style-four .banner-text h6 {
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.banner-style-four .banner-text p {
+  margin-bottom: 35px;
+}
+
+.banner-style-four .banner-text .banner-btn a {
+  margin-right: 20px;
+}
+
+.banner-style-four .banner-text .banner-btn .cv-btn {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  -webkit-box-shadow: 0 0 0 0 !important;
+          box-shadow: 0 0 0 0 !important;
+}
+
+.banner-style-four .banner-text .banner-btn .cv-btn:hover {
+  background-color: #ffffff;
+  color: #03abeb;
+  -webkit-box-shadow: 0 6px 13px rgba(0, 0, 0, 0.25) !important;
+          box-shadow: 0 6px 13px rgba(0, 0, 0, 0.25) !important;
+}
+
+.banner-style-four .banner-img-two {
+  -webkit-animation: translateY 10s infinite linear;
+          animation: translateY 10s infinite linear;
+  padding-top: 60px;
+}
+
+/*----- Creative Agency Page One End -----*/
+/*----- Creative Agency Page Two Start -----*/
+/* Custom CSS Start */
+.color-red {
+  color: #f71c0a !important;
+}
+
+/*----- Creative Agency Page Two End -----*/
+/* Back To Top  CSS Start */
+.top-btn {
+  color: #000000;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 35px;
+  z-index: 9;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+/* Back To Top  CSS End */
+/* Preloader CSS Start */
+.loader-content {
+  background: #06a1e9;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 99999999;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+          animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+          animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* Preloader CSS End */
+/* Animation CSS Start */
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes translateY {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes translateY {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes translateX {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes translateX {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes scale {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
+@keyframes scale {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(240, 52, 52, 0.7);
+            box-shadow: 0 0 0 0 rgba(240, 52, 52, 0.7);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(240, 52, 52, 0);
+            box-shadow: 0 0 0 10px rgba(240, 52, 52, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(240, 52, 52, 0);
+            box-shadow: 0 0 0 0 rgba(240, 52, 52, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(240, 52, 52, 0.7);
+            box-shadow: 0 0 0 0 rgba(240, 52, 52, 0.7);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(240, 52, 52, 0);
+            box-shadow: 0 0 0 10px rgba(240, 52, 52, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(240, 52, 52, 0);
+            box-shadow: 0 0 0 0 rgba(240, 52, 52, 0);
+  }
+}
+
+/* Animation CSS End */
+/*# sourceMappingURL=style.css.map */

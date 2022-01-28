@@ -1,0 +1,17 @@
+@page{
+     margin: 8mm 15mm 25mm 15mm;
+}
+td, th{
+    font-size: 12px;
+    vertical-align: middle;
+}
+.center-align{
+    text-align: center;
+}
+.max-width{
+    width: 15px;
+}
+
+.logo{
+  width: 50%;
+}
