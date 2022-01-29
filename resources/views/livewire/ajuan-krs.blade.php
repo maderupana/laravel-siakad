@@ -1,7 +1,7 @@
 <div>
-  @foreach ($test as $item)
+  {{-- @foreach ($test as $item)
   @dump($item->max('username'))
-  @endforeach
+  @endforeach --}}
 
   <div class="card radius-15">
     <div class="card-header">
@@ -51,7 +51,7 @@
               <td>
                 <p hidden>{{$item[0]['status_validasi'] == '' ? 'Tidak Valid' : $item[0]['status_validasi']}}</p>
                 
-                @if (collect($item)->pluck('sks')->sum() >= 24)
+                @if (collect($item)->pluck('sks')->sum() > 24)
                 <span class="btn btn-danger disabled">Total SKS Tidak Valid</span>
                 @else
                 <div class="btn-group" role="group">
