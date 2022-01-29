@@ -19,6 +19,7 @@ class ProfileController extends Controller
     {
         $cek_bukti_bayar =  PembayaranPendaftaran::where('id_user', auth()->user()->id)->get();
         // dd($cek_bukti_bayar->first()->validasi);
+        // test push 1
         if ($cek_bukti_bayar->isEmpty() || $cek_bukti_bayar->first()->validasi != 1) {
             return redirect('/pembayaran');
         }
