@@ -12,7 +12,7 @@
 
        <!--start content-->
           <main class="page-content">
-      @if ($data_account->status_pembayaran == 1 && $data_account->status == 'Mahasiswa')
+      @if ($data_account->status_pembayaran == 0 && $data_account->status == 'Mahasiswa')
          @include('layout.content.krs')
       @else
          @include('errorpage.errorkhsKrs')

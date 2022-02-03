@@ -79,6 +79,7 @@
                 @endif
                 @if ($data_account['status'] == 'operator')
                 <li> <a href="/open-periode-krs"><i class="bi bi-key"></i>Buka Periode KRS</a></li>
+                <li> <a href="/valid-krs"><i class="bi bi-key"></i>Data Valid KRS</a></li>
                 @endif
                 {{--
                 <li> <a href="#"><i class="bi bi-arrow-right-short"></i>Invoice</a>

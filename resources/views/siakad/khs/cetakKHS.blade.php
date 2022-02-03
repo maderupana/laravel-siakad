@@ -169,8 +169,15 @@
                 <p> Ketua Program Studi</p>
                 <br>
                 <br>
+                @if ($prodi[0] ==  'S1 Manajemen')
                 <p class="mb-0"><strong class=" text-decoration-underline" style="text-decoration-skip-ink: none;">Ni Luh Eka Yudi Prastiwi, S.E.,M.M</strong></p>
-                <p>1212121212</p>
+                <p>14.12.2.073</p>
+                @endif
+
+                @if ($prodi[0] ==  'D3 Akuntansi')
+                <p class="mb-0"><strong class=" text-decoration-underline" style="text-decoration-skip-ink: none;">Gede Widiadnyana Pasek, S.Pd., M.Si</strong></p>
+                <p>17.07.2.086</p>
+                @endif
             </div>
         </div>
     </page>
