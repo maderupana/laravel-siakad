@@ -14,6 +14,7 @@
           <thead>
             <tr>
               <td colspan="2">
+                <button wire:click="$set('angkatan', '')" class="btn badge bg-warning mb-2 cursor-pointer text-dark border-0"><i class="bi bi-arrow-counterclockwise"></i> Reset filter</button>
                  <select wire:model="angkatan" class="form-control cursor-pointer w-50 mb-3" list="datalistOptions">
                           <option value="">Sort by angkatan</option>
                       @foreach ($test as $item)
@@ -183,7 +184,7 @@
         <div class="modal-body">
 
           <div class="d-flex justify-content-center">
-            <div class="spinner-grow" role="status" wire:loading>
+            <div class="spinner-grow" role="status" wire:loading >
               <span class="visually-hidden">Loading...</span>
             </div>
           </div>
@@ -214,7 +215,8 @@
         <div class="modal-footer">
           <form wire:submit.prevent="validasiKRSf()">
 
-            <div class="row ms-auto" wire:loading.remove>
+            <div class="row ms-auto">
+              {{-- <span wire:loading wire:target="validasi_krs">test</span> --}}
               {{-- <div class="col-sm-7 ms-auto">
                 <textarea wire:model="ket_validate_krs" rows="1" placeholder="keterangan anda..." class="form-control"></textarea>
               </div> --}}
@@ -222,8 +224,8 @@
               <div class="col-sm">
                 
                 <select wire:model="validasi_krs" name="validasi_krs" class="form-control ml-auto cursor-pointer" required>
-                  <option selected value="{{$data_krs_mhs->where('id_mhs', $id_mhs_ajuan)->first()['status_validasi']}}">{{$data_krs_mhs->where('id_mhs', $id_mhs_ajuan)->first()['status_validasi']}}</option>
-                  <option value="Valid">Valid</option>
+                  <option value="">Pilih</option>
+                  <option value="Valid">Valid</option>  
                   <option value="Tidak Valid">Tidak Valid</option>
                 </select>
               </div>
@@ -231,6 +233,7 @@
                 <button type="submit" class="btn btn-outline-primary">Simpan</button>
               </div>
             </div>
+            
           </form>
           
         </div>
