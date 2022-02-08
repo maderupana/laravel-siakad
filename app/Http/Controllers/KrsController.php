@@ -32,9 +32,9 @@ class KrsController extends Controller
         $NamaPeriode = $OpenPeriodKRS['nama_periode'];
         $groupEvenOdd = $OpenPeriodKRS['id_periode'] % 2;
         if ($groupEvenOdd == 0) {
-            $periodeSebelumnya = (substr($NamaPeriode, 0, 4)) . '/' . (substr($NamaPeriode, 5, 4)) . ' ' . ('Genap');
+            $periodeSebelumnya = (substr($NamaPeriode, 0, 4)) . '/' . (substr($NamaPeriode, 5, 4)) . ' ' . ('Ganjil');
         } else {
-            $periodeSebelumnya = (substr($NamaPeriode, 0, 4) - 1) . '/' . (substr($NamaPeriode, 5, 4) - 1) . ' ' . ('Ganjil');
+            $periodeSebelumnya = (substr($NamaPeriode, 0, 4) - 1) . '/' . (substr($NamaPeriode, 5, 4) - 1) . ' ' . ('Genap');
         }
         $GetDetailNilai = CurlPddikti::GetDetailNilaiPerkuliahanKelas($dataUser['id_registrasi_mahasiswa'], $periodeSebelumnya);
         $cekNilaiKosong =  collect(Arr::get($GetDetailNilai, 'data'));
@@ -57,7 +57,7 @@ class KrsController extends Controller
             return view('siakad.krs.index', [
                 'title' => 'KRS Mahasiswa',
                 'data_account' => $dataUser,
-                // 'namaPeriode' => $NamaPeriode,
+                // 'periodeSebelumnya' => $periodeSebelumnya,
                 // 'oddevent' => $groupEvenOdd,
                 'cek_nilai_kosong' => $cekNilaiKosong->where('nilai_huruf', null),
                 // 'groupingMatkulKurikulum' => collect($getMatkulKurikulum['data'])->sortBy('semester')->groupBy('semester'),
