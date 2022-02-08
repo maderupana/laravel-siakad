@@ -31,7 +31,11 @@ class KrsController extends Controller
         // $accesOpenPeriode = $OpenPeriodKRS['access'];
         $NamaPeriode = $OpenPeriodKRS['nama_periode'];
         $groupEvenOdd = $OpenPeriodKRS['id_periode'] % 2;
-        $periodeSebelumnya = (substr($NamaPeriode, 0, 4) - 1) . '/' . (substr($NamaPeriode, 5, 4) - 1) . ' ' . ($groupEvenOdd == 0 ? 'Ganjil' : 'Genap');
+        if ($groupEvenOdd == 0) {
+            $periodeSebelumnya = (substr($NamaPeriode, 0, 4)) . '/' . (substr($NamaPeriode, 5, 4)) . ' ' . ('Genap');
+        } else {
+            $periodeSebelumnya = (substr($NamaPeriode, 0, 4) - 1) . '/' . (substr($NamaPeriode, 5, 4) - 1) . ' ' . ('Ganjil');
+        }
         $GetDetailNilai = CurlPddikti::GetDetailNilaiPerkuliahanKelas($dataUser['id_registrasi_mahasiswa'], $periodeSebelumnya);
         $cekNilaiKosong =  collect(Arr::get($GetDetailNilai, 'data'));
         $userDosenPA = collect(User::where('status', 'Dosen')->get());
