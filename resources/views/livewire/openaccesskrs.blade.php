@@ -92,10 +92,10 @@
                 </div> --}}
 
                 <form wire:submit.prevent="updateStatusPembayaran({{$item->id}})">
-                    @if ($validOrNot[$key]['status_pembayaran'] == null || $validOrNot[$key]['status_pembayaran'] == 0)
-                    <button class="btn bg-transparent text-danger" wire:click="$set('statusValidasi', '1')"><i class="bi bi-dash-circle-fill"></i></button> <i>blocked</i>
+                    @if ($validOrNot[$key]['status_pembayaran'] == 1)
+                    <button class="btn bg-transparent text-danger" wire:click="$set('statusValidasi', '0')"><i class="bi bi-dash-circle-fill"></i></button> <i>blocked</i>
                     @else
-                    <button class="btn bg-transparent text-tiffany" wire:click="$set('statusValidasi', '')"><i class=" bi bi-check-circle-fill"></i></button> <i>opened</i>
+                    <button class="btn bg-transparent text-tiffany" wire:click="$set('statusValidasi', '1')"><i class=" bi bi-check-circle-fill"></i></button> <i>opened</i>
                     @endif
                 </form>
                 {{-- @dump($validOrNot[$key]['status_pembayaran']) --}}
