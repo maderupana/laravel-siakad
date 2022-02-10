@@ -170,7 +170,7 @@
                 <br>
                 <br>
                 @if ($prodi[0] ==  'S1 Manajemen')
-                <p class="mb-0"><strong class=" text-decoration-underline" style="text-decoration-skip-ink: none;">Ni Luh Eka Yudi Prastiwi, S.E.,M.M</strong></p>
+                <p class="mb-0"><strong class=" text-decoration-underline" style="text-decoration-skip-ink: none;">Ni Luh Putu Eka Yudi Prastiwi, S.E.,M.M</strong></p>
                 <p>14.12.2.073</p>
                 @endif
 
