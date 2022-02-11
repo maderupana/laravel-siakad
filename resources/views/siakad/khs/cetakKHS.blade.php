@@ -119,7 +119,7 @@
                     <td align="center">{{ $data['nilai_angka']}}</td>
                     <td align="center">{{$data['nilai_huruf']}}</td>
                     <td class="center-align">{{$data['nilai_indeks']}}</td>
-                    <td class="center-align">{{ $sksxindeks}}</td>
+                    <td class="center-align">{{ number_format(round($sksxindeks, 1),1)}}</td>
                 </tr>
                 @endforeach
                 <tr>
