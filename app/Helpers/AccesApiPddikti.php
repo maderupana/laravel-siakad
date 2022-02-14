@@ -240,6 +240,31 @@ class CurlPddikti
         // $errorCode = Arr::get($responseBody, 'data.error_code');
         return $responseBody;
     }
+    public static function GetBiodataMahasiswa($idMhs)
+    {
+
+        $apiPddikti = PddiktiToken::where('id', 1)->get()[0];
+        $apiURL = $apiPddikti['url_api'];
+        $postInput = [
+            "act" => 'GetBiodataMahasiswa',
+            "token" => $apiPddikti['the_token'],
+            "filter" => "id_mahasiswa = '" . $idMhs . "'",
+            "order" => "",
+            "limit" => "",
+            "offset" => 0
+        ];
+
+        $headers = [
+            'X-header' => 'value'
+        ];
+
+        $response = Http::withHeaders($headers)->post($apiURL, $postInput);
+
+        $responseBody = json_decode($response->getBody(), true);
+
+        // $errorCode = Arr::get($responseBody, 'data.error_code');
+        return $responseBody;
+    }
 
     public static function GetListRiwayatPendidikanMahasiswa($idRegMhs)
     {

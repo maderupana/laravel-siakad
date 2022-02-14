@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminKeuanganController;
+use App\Http\Controllers\AdminKeuanganMaruController;
 use App\Http\Controllers\AjuanKrsController;
 use App\Http\Controllers\BayarPendaftaranController;
 use App\Http\Controllers\Cekdatapddikti;
@@ -14,6 +15,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OpenKurikulumController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TranskripController;
 use App\Http\Controllers\WaliController;
 use App\Http\Livewire\AjuanKrs;
 use App\Imports\Imports\bulkSP;
@@ -54,12 +56,15 @@ Route::get('/cetak-khs/{data}', [KhsController::class, 'cetakKHS'])->middleware(
 Route::post('/khs', [KhsController::class, 'index'])->middleware('auth');
 Route::get('/krs', [KrsController::class, 'index'])->middleware('auth');
 Route::get('/ajuan-krs', [AjuanKrsController::class, 'index'])->middleware('auth');
-Route::get('/admin-keu', [AdminKeuanganController::class, 'index'])->middleware('auth');
 Route::post('/krs', [KrsController::class, 'update'])->middleware('auth');
 Route::get('/import-user', [ImportDatatoUserController::class, 'index'])->middleware('auth');
 Route::get('/import-user/export-user', [ImportDatatoUserController::class, 'exportUser'])->middleware('auth');
 Route::post('/import-user', [ImportDatatoUserController::class, 'import'])->middleware('auth');
+// adminkeu route
 Route::post('/admin-keu', [AdminKeuanganController::class, 'importStatusPembayaran'])->middleware('auth');
+Route::get('/admin-keu', [AdminKeuanganController::class, 'index'])->middleware('auth');
+Route::resource('/maru', AdminKeuanganMaruController::class)->middleware('auth');
+
 // Route::get('/cekkhs', [Cekdatapddikti::class, 'index'])->middleware('auth');
 
 // Route::get('/pembayaran', [BayarPendaftaranController::class, 'index'])->middleware('auth');
@@ -72,6 +77,10 @@ Route::post('/changepwd', [ChangePasswordController::class, 'changePassword'])->
 
 // Route::get('/open-periode-krs', [OpenPeriodeKRSController::class, 'index'])->middleware('auth');
 Route::get('/open-periode-krs', 'App\Http\Controllers\OpenPeriodeKRSController@index')->middleware('auth');
+
+// Transkrip mahasiswa
+Route::get('/transkrip', [TranskripController::class, 'index'])->middleware('auth');
+Route::get('/cetak-transkrip', [TranskripController::class, 'cetakTranskrip'])->middleware('auth');
 
 Route::get('users', function () {
     return view('/users.index');

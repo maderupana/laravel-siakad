@@ -66,6 +66,8 @@
                 </li>
                 <li> <a href="/krs"><i class="bi bi-clipboard-check"></i>KRS</a>
                 </li>
+                <li> <a href="/transkrip"><i class="bi bi-clipboard"></i>Transkrip</a>
+                </li>
                 @endif
                 @if ($data_account['status'] == 'Dosen') 
                 <li> 
@@ -73,9 +75,7 @@
                 </li>
                 @endif
                 @if ($data_account['status'] == 'admin_keu')
-                <li> 
-                  <a href="/admin-keu"><i class="bi bi-key"></i>Open Access KRS</a>
-                </li>
+                    @include('layout.sidemenu.adminkeu')
                 @endif
                 @if ($data_account['status'] == 'operator')
                 <li> <a href="/open-periode-krs"><i class="bi bi-key"></i>Buka Periode KRS</a></li>
