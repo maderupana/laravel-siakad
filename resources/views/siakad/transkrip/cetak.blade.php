@@ -141,7 +141,7 @@
                         $hasilbagi = ($countloop - $sisabagi) / $pembagi;
                         $nilaitb1 = $hasilbagi + $sisabagi;
                         @endphp
-
+                        
                         @foreach (collect($getKurikulum)->sortBy('semester') as $key => $data)
                         @foreach ($getTranskrip as $item)
                         @if ($item['kode_mata_kuliah'] == $data['kode_mata_kuliah'])
@@ -201,11 +201,20 @@
                                 <td>{{$item['nilai_huruf']}}</td>
                                 <td class=" text-center">{{$sksxindeks}}</td>
                             </tr>
+                            
                         @endif
                         @endif
                         @endforeach
                         @endforeach
-
+                            @if($sisabagi == 1)
+                                <tr>
+                                    <td>&nbsp</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            @endif
                     </tbody>
                 </table>
                 
@@ -248,7 +257,6 @@
                     @endif
                 </td>
             </tr>
-            
         </table>
         {{-- @dump($getTranskrip) --}}
         <div class="d-flex" style="font-family: serif">
