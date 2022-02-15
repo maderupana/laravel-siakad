@@ -155,7 +155,7 @@
                             <tr>
                                 <td scope="row">{{$no++}}</td>
                                 <td>
-                                    {{Str::of($item['nama_mata_kuliah'])->title}}
+                                    {{Str::replace('Ii', 'II', Str::of($item['nama_mata_kuliah'])->title)}}
                                 </td>
                                 <td>{{substr($sks,0,1)}}</td>
                                 <td>{{$item['nilai_huruf']}}</td>
@@ -195,7 +195,7 @@
                             <tr>
                                 <td scope="row">{{$notb2++}}</td>
                                 <td>
-                                     {{Str::of($item['nama_mata_kuliah'])->title}}
+                                     {{Str::replace('Ii', 'II', Str::of($item['nama_mata_kuliah'])->title)}}
                                 </td>
                                 <td>{{substr($sks,0,1)}}</td>
                                 <td>{{$item['nilai_huruf']}}</td>
