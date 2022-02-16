@@ -21,17 +21,17 @@ class TranskripController extends Controller
             return redirect('/transkrip');
         } else {
             $getListMahasiswa = collect(CurlPddikti::GetListMahasiswa($userData->id_registrasi_mahasiswa)['data']);
+            $getBioMhs = collect(CurlPddikti::GetBiodataMahasiswa($getListMahasiswa->first()['id_mahasiswa'])['data']);
             $angkatan_mhs = substr($getListMahasiswa->pluck('id_periode')[0], 0, 4);
             $prodi_mhs = $getListMahasiswa->pluck('nama_program_studi')[0];
             $id_kurikulum = collect(OpenKurikulum::where('prodi', $prodi_mhs)->where('untuk_angkatan', 'LIKE', '%' . $angkatan_mhs . '%')->get())->pluck('id_kurikulum')[0];
-            // $getMatkulKurikulum = 
             return view('siakad.transkrip.index', [
                 'title' => 'Transkrip Mahasiswa',
                 'data_account' => $userData,
                 'getTranskrip' =>  $getTranskrip['data'],
+                'bio_mhs' => $getBioMhs->first(),
                 'getKurikulum' => CurlPddikti::GetMatkulKurikulum($id_kurikulum)['data'],
-                'total_sks' => collect($getTranskrip['data'])->sum('sks_mata_kuliah'),
-                // 'tetsTranskrip' => CurlPddikti::GetTranskripMahasiswa('944e8723-4d5d-482f-a04a-fb6323d82d1b', '')
+                'total_sks' => collect($getTranskrip['data'])->sum('sks_mata_kuliah')
             ]);
         }
     }

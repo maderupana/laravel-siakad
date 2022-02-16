@@ -1,6 +1,4 @@
-{{-- @dd($getTranskrip) --}}
-{{-- @dump(collect($getKurikulum)->sortBy('semester'))
-@dump($getTranskrip) --}}
+
     <div class="card radius-15">
         <div class="card-body">
             <div class="card radius-15">
@@ -22,12 +20,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
                                     <?php $totalsksxindeks = 0; $no = 1;?>
-                                    @foreach (collect($getKurikulum)->sortBy('semester') as $key => $data)
-                                    @foreach ($getTranskrip as $item)
-                                        @if ($item['kode_mata_kuliah'] == $data['kode_mata_kuliah'])
-                                             <tr>
+                                    
+                                    @foreach (collect($getTranskrip)->sortBy('smt_diambil') as $item)
+                                    <tr>
                                         @php
                                         $sks = $item['sks_mata_kuliah'];
                                         $indeks = $item['nilai_indeks'];
@@ -42,10 +38,9 @@
                                         <td>{{$item['nilai_huruf']}}</td>
                                         <td class=" text-center">{{$sksxindeks}}</td>
                                     </tr>
-                                        @endif
+                                      
                                     @endforeach
-                                   
-                                    @endforeach
+                                
                                     <tr>
                                         <td colspan="2" align="right"><strong>Totol SKS :</strong></td>
                                         <td><strong>{{$total_sks}}</strong></td>

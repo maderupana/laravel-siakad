@@ -142,9 +142,9 @@
                         $nilaitb1 = $hasilbagi + $sisabagi;
                         @endphp
                         
-                        @foreach (collect($getKurikulum)->sortBy('semester') as $key => $data)
-                        @foreach ($getTranskrip as $item)
-                        @if ($item['kode_mata_kuliah'] == $data['kode_mata_kuliah'])
+                        
+                        @foreach (collect($getTranskrip)->sortBy('smt_diambil') as $item)
+                        
                         @if($no <= $nilaitb1)
                                 @php
                                 $sks = $item['sks_mata_kuliah'];
@@ -162,8 +162,7 @@
                                 <td class=" text-center">{{$sksxindeks}}</td>
                             </tr>
                         @endif
-                        @endif
-                        @endforeach
+                      
                         @endforeach
 
                     </tbody>
@@ -182,9 +181,9 @@
                     </thead>
                     <tbody>
                         @php $notb2 = $nilaitb1 + 1; @endphp
-                        @foreach (collect($getKurikulum)->sortBy('semester') as $key => $data)
-                        @foreach ($getTranskrip as $item)
-                        @if ($item['kode_mata_kuliah'] == $data['kode_mata_kuliah'])
+                        
+                        @foreach (collect($getTranskrip)->sortBy('smt_diambil') as $item)
+                        
                         @if($no_tb2++ > $nilaitb1)
                                 @php
                                 $sks = $item['sks_mata_kuliah'];
@@ -203,8 +202,6 @@
                             </tr>
                             
                         @endif
-                        @endif
-                        @endforeach
                         @endforeach
                             @if($sisabagi == 1)
                                 <tr>
